@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+
+    <input id="username" placeholder="Username"><br><br>
+    <input id="password" type="password" placeholder="Password"><br><br>
+
+    <!-- Button must NOT submit a form -->
+    <button type="button" onclick="login()">Login</button>
+
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "admin123") {
+                console.log("Login success. Redirecting...");
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Login failed");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

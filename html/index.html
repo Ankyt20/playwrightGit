@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Network and Cookies Session</title>
+        <script>
+            async function fetchData(){
+                const response = await fetch('/api/data');
+                const data = await response.json();
+                document.getElementById('message').textContent = data.message;
+            }
+ 
+            function saveCookie(){
+                document.cookie = "session=abc123; path=/; max-age=3600"
+                alert('Session cookie set!');
+            }
+ 
+            function showCookies(){
+                alert('Cookies: '+ document.cookie);
+            }
+        </script>
+ 
+ 
+    </head>
+    <body>
+        <h1> Network and Cookies</h1>
+        <button id="fetchBtn" onclick="fetchData()">Fetch Data</button>
+        <button id="saveCookieBtn" onclick="saveCookie()">Save Cookies</button>
+        <button id="showCookieBtn" onclick="showCookies()">Show Cookies</button>
+
+        <p id="message"></p>
+ 
+    </body>
+</html>
