@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 
-test('Valid Login ',async ({ page }) => {
+test('Valid Logins',async ({ page }) => {
         await page.goto('http://127.0.0.1:5500/html/adminLogin.html');
         await page.locator('//input[@id="username"]').fill('admin');
         await page.locator('//input[@id="password"]').fill('admin123');
